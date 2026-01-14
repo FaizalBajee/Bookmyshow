@@ -1,0 +1,78 @@
+/* Navbar Container */
+.navbar {
+  display: flex;
+  width: 97%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  background-color: #121212;
+  color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Left Section */
+.navbar-left {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.logo-text {
+  margin-left: 6px;
+}
+
+/* Center Search */
+.navbar-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.search-input {
+  width: 60%;
+  max-width: 400px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}
+
+/* Right Section */
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.signup-btn {
+  /* background-color: #e50914;
+  color: white; */
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.signup-btn:hover {
+  background-color: #a5a2a3;
+}
+
+.login-btn {
+  background-color: #e50914;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.login-btn:hover {
+  background-color: #b20710;
+}
+
+/* Page Content */
+.page-content {
+  padding: 20px;
+}
