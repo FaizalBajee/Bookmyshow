@@ -13,6 +13,7 @@ import {
 import "./Layout.css";
 import { FolderAddOutlined } from "@ant-design/icons";
 import AddMovieModal from "../AddMovie/AddMovieModel";
+import AddShowModal from "../AddShow/AddShowModal";
 
 const Layout = () => {
   const [openAuthModel, setOpenAuthModel] = useState(false);
@@ -86,6 +87,9 @@ const Layout = () => {
 
       {openAddMovieModel && (
         <AddMovieModal isOpen={openAddMovieModel} onClose={handleAddMovie} />
+      )}
+      {openAddShowModel && (
+        <AddShowModal isOpen={openAddShowModel} onClose={handleAddShow} />
       )}
     </div>
   );

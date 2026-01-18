@@ -1,4 +1,5 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
+import { setAuthToken } from "../../../common/axios/axios";
 
 export const AuthContext = createContext();
 
@@ -7,21 +8,27 @@ export function AuthProvider({ children }) {
   const [token, setToken] = useState(null);
   const [refreshToken, setRefreshToken] = useState(null);
 
-  // ✅ Login (store in memory only)
-  const login = (userData, jwtToken,jwtRefreshToken) => {
+
+
+  const login = (userData, jwtToken, jwtRefreshToken) => {
     setUser(userData);
     setToken(jwtToken);
     setRefreshToken(jwtRefreshToken);
+
+    setAuthToken(jwtToken);
   };
 
-  // ✅ Logout (clear memory)
   const logout = () => {
     setUser(null);
     setToken(null);
+
+    setAuthToken(null);
   };
 
   return (
-    <AuthContext.Provider value={{ user, token, login, logout,setToken,refreshToken }}>
+    <AuthContext.Provider
+      value={{ user, token, login, logout, setToken, refreshToken }}
+    >
       {children}
     </AuthContext.Provider>
   );
