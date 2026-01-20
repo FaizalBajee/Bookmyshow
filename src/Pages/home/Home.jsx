@@ -77,6 +77,7 @@ export default function Home() {
         </div>
         <BookingModel
           movie={selectedMovie}
+          screenID={1}
           onClose={() => setSelectedMovie(null)}
         />
       </div>

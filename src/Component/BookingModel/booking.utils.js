@@ -1,9 +1,13 @@
 export const toggleSeatSelection = (selectedSeats, seat) => {
-  return selectedSeats.includes(seat)
-    ? selectedSeats.filter((s) => s !== seat)
-    : [...selectedSeats, seat];
+  const seatId = seat._id;
+
+  return selectedSeats.includes(seatId)
+    ? selectedSeats.filter((id) => id !== seatId)
+    : [...selectedSeats, seatId];
 };
 
-export const calculateTotalAmount = (seatCount, price) => {
-  return seatCount * price;
+export const getExpiryTime = (minutes = 5) => {
+  const date = new Date();
+  date.setMinutes(date.getMinutes() + minutes);
+  return date.toISOString();
 };
